@@ -1,0 +1,62 @@
+---
+description: Guidelines for using PocketFlow, a minimalist LLM framework
+globs: **/*.py
+alwaysApply: true
+---
+# Pocket Flow
+
+A [100-line](mdc:https:/github.com/the-pocket/PocketFlow/blob/main/pocketflow/__init__.py) minimalist LLM framework for *Agents, Task Decomposition, RAG, etc*.
+
+- **Lightweight**: Just the core graph abstraction in 100 lines. ZERO dependencies, and vendor lock-in.
+- **Expressive**: Everything you love from larger frameworks—([Multi-])[Agents], [Workflow], [RAG], and more.  
+- **Agentic-Coding**: Intuitive enough for AI agents to help humans build complex LLM applications.
+
+
+
+
+## Core Abstraction
+
+We model the LLM workflow as a **Graph + Shared Store**:
+
+- [Node] handles simple (LLM) tasks.
+- [Flow] connects nodes through **Actions** (labeled edges).
+- [Shared Store] enables communication between nodes within flows.
+- [Batch] nodes/flows allow for data-intensive tasks.
+- [Async] nodes/flows allow waiting for asynchronous tasks.
+- [(Advanced) Parallel] nodes/flows handle I/O-bound tasks.
+
+
+
+## Design Pattern
+
+From there, it’s easy to implement popular design patterns:
+
+- [Agent] autonomously makes decisions.
+- [Workflow] chains multiple tasks into pipelines.
+- [RAG] integrates data retrieval with generation.
+- [Map Reduce] splits data tasks into Map and Reduce steps.
+- [Structured Output] formats outputs consistently.
+- [(Advanced) Multi-Agents] coordinate multiple agents.
+
+
+
+## Utility Function
+
+We **do not** provide built-in utilities. Instead, we offer *examples*—please *implement your own*:
+
+- [LLM Wrapper]
+- [Viz and Debug]
+- [Web Search]
+- [Chunking]
+- [Embedding]
+- [Vector Databases]
+- [Text-to-Speech]
+
+**Why not built-in?**: I believe it's a *bad practice* for vendor-specific APIs in a general framework:
+- *API Volatility*: Frequent changes lead to heavy maintenance for hardcoded APIs.
+- *Flexibility*: You may want to switch vendors, use fine-tuned models, or run them locally.
+- *Optimizations*: Prompt caching, batching, and streaming are easier without vendor lock-in.
+
+## Ready to build your Apps? 
+
+Check out [Agentic Coding Guidance], the fastest way to develop LLM projects with Pocket Flow!
