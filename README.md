@@ -1,6 +1,6 @@
 # Testronaut 🚀
 <div align="center">
-  <img src="./assets/logo.png" alt="testronaut" width="200" />
+  <img src="./assets/testronaut.svg" alt="testronaut" width="400" />
 </div>
 
 > Autonomous testing powered by LLMs
