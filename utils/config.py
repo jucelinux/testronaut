@@ -6,9 +6,6 @@ class MCPConfig(BaseModel):
 
 class OllamaConfig(BaseModel):
     model: str = "dolphin3"
-    url: str = "http://localhost:11434"
-    temperature: float = 0.7
-    max_tokens: int = 1024
 
 class Config(BaseModel):
     mcp: MCPConfig = MCPConfig()
