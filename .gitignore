@@ -95,3 +95,6 @@ coverage/
 # Python
 .venv/
 venv/
+
+# Testronaut
+snapshots/

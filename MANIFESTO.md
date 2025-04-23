@@ -1,6 +1,6 @@
 # 🚀 Testronaut
 
-**Testronaut** is an AI-powered automated behavioral testing platform. Inspired by autonomous agents and intelligent copilots, Testronaut navigates through systems like a real user — understanding natural language intentions, interacting with interfaces, and validating functionalities with precision and context.
+**Testronaut** is an AI-powered automated behavioral testing platform. Inspired by autonomous agents and intelligent copilots, Testronaut navigates through systems like a real user — understanding natural language intentions, interacting with interfaces, and validating functionalities with precision and context. Every action is meticulously documented, creating a bridge between human intent and machine execution.
 
 > For installation and usage instructions, check our [README.md](README.md)
 
@@ -10,59 +10,74 @@
 
 ### Vision
 
-> Automate the validation of digital systems behavior through intelligent agents that understand natural language intentions and interact with interfaces as real users would.
+> Transform automated testing through intelligent agents that understand natural language, interact like real users, and maintain comprehensive documentation of every action.
 
 ### Purpose
 
-Testronaut was born with the goal of reinventing modern QA, transforming tests into a conversation between people and machines. It eliminates the need for rigid scripts and promotes a new paradigm of **natural language-guided behavioral testing** with autonomous decision-making.
+Testronaut was born with the goal of reinventing modern QA, transforming tests into a conversation between people and machines. It eliminates the need for rigid scripts and promotes a new paradigm of **natural language-guided behavioral testing** with autonomous decision-making and automatic documentation.
 
 ---
 
 ## 🧩 Principles
 
-- **Test like a human. Act like an agent.**  
-  We use LLMs to interpret instructions and transform them into interactive actions.
+- **Test like a human. Document like a machine.**  
+  We combine natural language understanding with precise, structured documentation.
 
-- **Every test is a conversation.**  
-  Tests are dialogues between intention, action, and validation, expressed in natural language.
+- **Every test is a story.**  
+  Tests are narratives of intention, action, and validation, captured in both natural language and structured data.
 
-- **Context is everything.**  
-  Execution depends on system state, history, and user flow. PocketFlow manages this context.
+- **Context through documentation.**  
+  Every step is documented with its context, expectations, and results, creating a complete testing narrative.
 
-- **Extensible by design.**  
-  Agents, tools, and flows are pluggable and customizable.
+- **Evidence-based validation.**  
+  Screenshots and structured reports provide concrete evidence of test execution and results.
 
-- **AI with responsibility.**  
-  Transparency, auditability, and interpretability are fundamental values.
+- **Transparency by design.**  
+  Clear documentation and structured reports ensure every test action is traceable and understandable.
 
 ---
 
 ## ⚙️ Core Technologies
 
-Testronaut is built on powerful open source technologies:
+Testronaut leverages powerful open source technologies:
 
-- [PocketFlow](https://github.com/the-pocket/PocketFlow) - Our foundation for LLM-powered workflows
+- [Google ADK](https://github.com/google/adk) - Foundation for building AI agents
+- [LiteLLM](https://github.com/BerriAI/litellm) - Universal API for LLM providers
 - [Playwright MCP](https://github.com/microsoft/playwright-mcp) - Reliable browser automation
-- [Ollama](https://ollama.ai) - Local LLM runtime for AI decision making
 
-For a complete list of tools and dependencies, see our [README.md](README.md#open-source-tools).
+For implementation details and features, see our [README.md](README.md#core-components).
 
 ---
 
-## 🌍 Testronaut's Future
+## 🌍 Current Features
 
-- Dashboards with results, metrics, and logs
-- Execution history and replays
-- CI/CD integration
-- Automatic documentation generation from tests
-- Support for multiple platforms (mobile, APIs, and more)
+- Natural language test creation
+- Automatic step documentation
+- Screenshot capture
+- Structured JSON reports
+- Headless browser support
+- Real-time test execution
+
+## 🎯 Future Roadmap
+
+- Interactive test report dashboards
+- Video recording of test execution
+- CI/CD pipeline integration
+- Multi-browser parallel testing
+- Custom test report templates
+- API testing capabilities
 
 ---
 
 ## 💡 Contribution
 
-This project is in proof of concept (PoC) phase.
-Feedback, ideas, and collaborations are very welcome!
+This project is in active development.
+We welcome contributions, especially in:
+
+- Test documentation enhancements
+- Report generation features
+- Browser automation capabilities
+- LLM integration improvements
 
 See our [README.md](README.md#contributing) for contribution guidelines.
 

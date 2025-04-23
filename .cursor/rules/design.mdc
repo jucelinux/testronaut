@@ -1,0 +1,101 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# ADK Project Structure Pattern
+
+## Core Principles
+
+1. **Lean Directory Creation**
+   - Only create directories when they have a clear, immediate purpose
+   - Avoid creating empty placeholder directories
+   - Let the project structure grow organically based on actual needs
+   - NEVER create directories just because they are in the reference structure
+
+2. **Directory Purpose**
+   - Each directory must contain active code or resources
+   - Directories should be created only when there's content to be added
+   - Remove empty directories that aren't being used
+
+## Reference Structure
+This is the ideal structure that your project may grow into. DO NOT create these directories until they are needed:
+
+parent_folder/
+  ${agent_name}/                    # Main agent directory (kebab-case)
+      ${agent_name}.py              # Agent implementation (snake_case)
+      shared_libraries/             # Common libraries used across the agent
+      entities/                     # Common entities (if needed)
+      sub_agents/                   # Specialized sub-agents (if needed)
+        ${sub_agent_name}/          # Specialized agent directory
+          agent.py                  # Specialized agent implementation
+          prompt.py                # Prompt of specialized agent
+      tools/                        # Agent-specific tools
+  deployment/                       # Deployment configuration and scripts
+  eval/                            # Evaluation assets
+    eval_data/                     # Evaluation data
+  tests/                           # Test directory
+    unit/                          # Unit tests
+
+## ADK Core Components
+
+1. Runtime Components:
+   - runtime/                      # Agent runtime environment
+   - sessions/                     # Session management
+   - context/                      # Context handling and management
+   - events/                       # Event system and handlers
+
+2. Development Components:
+   - artifacts/                    # Build and deployment artifacts
+   - callbacks/                    # Callback definitions and handlers
+   - tools/                        # ADK tools and utilities
+   - workflow-agents/             # Workflow-specific agent templates
+
+3. Operational Components:
+   - deploy/                       # Deployment configurations and guides
+   - evaluate/                     # Evaluation frameworks and utilities
+
+## Implementation Rules
+
+1. Start Minimal:
+   - Begin with only the essential files (${agent_name}.py and __init__.py)
+   - Add directories ONLY when you have content to put in them
+   - Never create empty directories just to match the reference structure
+   - Let your project structure grow naturally as needed
+
+2. Directory Creation Criteria:
+   - There must be immediate content to add
+   - The directory serves a clear, defined purpose
+   - The functionality can't be reasonably included in existing files
+
+3. Code Organization:
+   - Keep related code together
+   - Use clear, descriptive names
+   - Document directory purposes in README files
+
+## Component Integration Guidelines
+
+1. Runtime Integration:
+   - Agents should properly integrate with ADK runtime
+   - Use session management for state handling
+   - Implement proper context management
+   - Handle events appropriately
+
+2. Development Practices:
+   - Utilize ADK callbacks for extensibility
+   - Leverage provided tools and utilities
+   - Follow workflow-agents patterns when applicable
+
+3. Operational Considerations:
+   - Follow deployment best practices
+   - Implement evaluation metrics
+   - Use artifact management
+
+## Notes
+- The reference structure is a GUIDE, not a requirement
+- Only create directories when you have actual content for them
+- Each directory must have a clear, immediate purpose
+- Remove any directory that becomes empty
+- Document new directories in project documentation
+- Keep the structure as flat as possible until complexity is justified
+- Add complexity only when justified by actual needs

@@ -1,0 +1,21 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Analyze Documentation Rule
+
+## Description
+This rule analyzes the content of the docs directory before generating code to ensure that the generated code aligns with the existing documentation.
+
+## Actions
+### Analyze Directory
+- type: analyze_directory
+- path: .cursor/docs
+- recursive: true
+- include_patterns: 
+  - **/*.md
+- priority: high
+
+## Metadata
+- purpose: Ensure that generated code aligns with existing documentation
