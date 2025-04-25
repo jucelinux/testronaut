@@ -105,14 +105,28 @@ testronaut/
 ├── testronaut/
 │   ├── __init__.py
 │   ├── agent.py              # Main agent implementation
-│   └── tools/
-│       ├── __init__.py
-│       ├── document_test_step.py   # Test documentation tools
-│       └── playwright_mcp.py       # Browser automation setup
-├── snapshots/                # Test reports and screenshots
-├── assets/                  # Project assets
-└── requirements.txt         # Python dependencies
+│   ├── shared_libraries/     # Shared utilities and constants
+│   ├── sub_agents/          # Specialized test agents
+│   │   ├── test_controller/ # Controls test flow
+│   │   ├── test_executor/   # Executes test steps
+│   │   ├── test_finisher/   # Handles test completion
+│   │   └── test_planner/    # Manages test planning
+│   └── tools/               # Agent tools and utilities
+├── snapshots/               # Test reports and screenshots
+├── assets/                 # Project assets
+└── requirements.txt        # Python dependencies
 ```
+
+## Architecture
+
+Testronaut uses a multi-agent architecture for robust test management:
+
+- **Test Controller**: Orchestrates the overall test flow
+- **Test Planner**: Creates and manages test plans
+- **Test Executor**: Handles test step execution
+- **Test Finisher**: Manages test completion and reporting
+
+Each agent is specialized in its role, communicating through a shared state system for coordinated test execution.
 
 ## Test Documentation
 

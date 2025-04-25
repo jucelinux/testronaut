@@ -18,6 +18,7 @@ test_planner_agent = Agent(
         description="A helpful assistant for test planning.",
         instruction=prompt.TEST_PLANNER_PROMPT,
         tools=[create_test_plan],
+        output_key="STATE_TEST_PLANNER",
     )
 
 

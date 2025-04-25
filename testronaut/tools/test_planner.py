@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from typing import Optional, List
 from loguru import logger
+from google.adk.tools import ToolContext
+
 
 @dataclass
 class TestStep:
@@ -17,27 +19,63 @@ class TestPlan:
     name: str
     description: str
     steps: List[TestStep]
-
-def create_test_plan(test_description: dict):
+    
+def create_test_plan(test_plan: dict, tool_context: ToolContext) -> dict:
   """
-  Create a list of test steps from a test description and save into session state.
+  Create a test plan from a test description.
   
   Args:
-    test_description: A dictionary containing the test description.
-    
+    test_plan: A dictionary containing a test plan.
+    tool_context: ToolContext object.
   Returns:
-    None
+    dict: A dictionary containing the status of creation of the test plan.
+    
   """
-  test_plan = TestPlan(
-    name=test_description['test_name'],
-    description=test_description['description'],
-    steps=[
-        TestStep(
-            step=step['step'],
-            action=step['action'],
-            expected_result=step['expected_result'],
-        )
-        for step in test_description['steps']
-    ]
-  )
-  logger.info(f"Test plan created: {test_plan}")
+  test_plan = TestPlan(**test_plan)
+  tool_context.state["test_plan"] = test_plan
+  logger.info(f"Test plan created: {tool_context.state.get('test_plan')}")
+  return {"status": "completed"}
+
+
+def get_current_test_step(tool_context: ToolContext) -> dict:
+  """
+  Get the test step from the session state.
+  
+  Returns:
+    The test step json or {"status": "completed"} if all steps are completed.
+  """
+  
+  test_plan = tool_context.state.get("test_plan")
+  
+  if len(test_plan.steps) == 0:
+    return {"status": "finished_all_test_steps"}
+  
+  current_test_step = test_plan.steps.pop(0)
+  logger.info(f"Current test step: {current_test_step}")
+
+  tool_context.state["current_test_step"] = current_test_step
+  tool_context.state["test_plan"] = test_plan
+
+  return current_test_step
+
+def has_finished_all_test_steps(tool_context: ToolContext) -> str:
+  """Call this function ONLY when all test steps are completed."""
+  
+  test_plan = tool_context.state.get("test_plan")
+  
+  if len(test_plan.steps) == 0:
+    print(f"  [Tool Call] exit_loop triggered by {tool_context.agent_name}")
+    return {"status": "finished_all_test_steps"}
+  
+  return {"status": "test_steps_not_completed"}
+
+def finish_test(tool_context: ToolContext) -> str:
+  """Call this function ONLY when all test steps are completed."""
+  tool_context.actions.escalate = True
+  return "ALL_TEST_STEPS_COMPLETED"
+  
+  
+  
+
+
+  

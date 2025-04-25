@@ -35,6 +35,9 @@ Testronaut was born with the goal of reinventing modern QA, transforming tests i
 - **Transparency by design.**  
   Clear documentation and structured reports ensure every test action is traceable and understandable.
 
+- **Specialized Agents, Unified Purpose.**  
+  Our multi-agent architecture ensures each component excels in its specific role while working together seamlessly.
+
 ---
 
 ## ⚙️ Core Technologies
@@ -44,6 +47,12 @@ Testronaut leverages powerful open source technologies:
 - [Google ADK](https://github.com/google/adk) - Foundation for building AI agents
 - [LiteLLM](https://github.com/BerriAI/litellm) - Universal API for LLM providers
 - [Playwright MCP](https://github.com/microsoft/playwright-mcp) - Reliable browser automation
+
+Our architecture is built on specialized sub-agents:
+- Test Controller - Orchestrates test flow
+- Test Planner - Manages test plans
+- Test Executor - Handles test execution
+- Test Finisher - Manages completion and reporting
 
 For implementation details and features, see our [README.md](README.md#core-components).
 
@@ -57,6 +66,9 @@ For implementation details and features, see our [README.md](README.md#core-comp
 - Structured JSON reports
 - Headless browser support
 - Real-time test execution
+- Multi-agent architecture
+- Coordinated test flow
+- Intelligent test planning
 
 ## 🎯 Future Roadmap
 
