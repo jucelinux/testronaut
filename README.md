@@ -107,12 +107,9 @@ testronaut/
 │   ├── agent.py              # Main agent implementation
 │   ├── shared_libraries/     # Shared utilities and constants
 │   ├── sub_agents/          # Specialized test agents
-│   │   ├── test_controller/ # Controls test flow
 │   │   ├── test_executor/   # Executes test steps
 │   │   ├── test_finisher/   # Handles test completion
-│   │   └── test_planner/    # Manages test planning
 │   └── tools/               # Agent tools and utilities
-├── snapshots/               # Test reports and screenshots
 ├── assets/                 # Project assets
 └── requirements.txt        # Python dependencies
 ```
@@ -121,10 +118,8 @@ testronaut/
 
 Testronaut uses a multi-agent architecture for robust test management:
 
-- **Test Controller**: Orchestrates the overall test flow
 - **Test Planner**: Creates and manages test plans
 - **Test Executor**: Handles test step execution
-- **Test Finisher**: Manages test completion and reporting
 
 Each agent is specialized in its role, communicating through a shared state system for coordinated test execution.
 
@@ -134,26 +129,7 @@ Tests are automatically documented with:
 - Step-by-step descriptions
 - Expected vs actual results
 - Timestamps for each action
-- Screenshot captures
-- JSON report generation
-
-Example report structure:
-```json
-{
-  "test_name": "Login Test",
-  "total_steps": 3,
-  "passed_steps": 2,
-  "failed_steps": 1,
-  "steps": [
-    {
-      "step_name": "Navigate to Login",
-      "description": "Open the login page",
-      "status": "passed",
-      "timestamp": "2024-04-23T12:34:56"
-    }
-  ]
-}
-```
+- Snapshot captures
 
 ## Contributing
 
