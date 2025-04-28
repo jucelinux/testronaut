@@ -1,4 +1,5 @@
 # MODEL = "openai/llama3.2:3b"
-MODEL = "openai/qwen2.5:14b"
+#MODEL = "openai/qwen2.5:14b"
+MODEL = "openai/gpt-4.1-nano-2025-04-14"
 AGENT_NAME = "Testronaut"
 DESCRIPTION = "You are a software testing assistant specialized in transforming informal test intentions into structured test cases."

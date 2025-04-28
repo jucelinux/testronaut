@@ -36,6 +36,12 @@ def create_test_plan(test_plan: dict, tool_context: ToolContext) -> dict:
   logger.info(f"Test plan created: {tool_context.state.get('test_plan')}")
   return {"status": "completed"}
 
+def get_test_plan(tool_context: ToolContext) -> dict:
+  """
+  Get the test plan from the session state.
+  """
+  test_plan = tool_context.state.get("test_plan")
+  return test_plan
 
 def get_current_test_step(tool_context: ToolContext) -> dict:
   """

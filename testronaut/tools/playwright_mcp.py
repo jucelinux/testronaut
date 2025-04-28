@@ -14,8 +14,7 @@ async def get_playwright_mcp_toolset():
         connection_params=StdioServerParameters(
             command='npx',
             args=["@playwright/mcp@latest", 
-                  "--headless",
-                  "--caps=\"browser_wait,browser_handle_dialog,browser_file_upload,browser_press_key,browser_navigate,browser_navigate_back,browser_click,browser_drag,browser_hover,browser_type,browser_select_option,browser_take_screenshot\""
+                  "--headless"
                   ],
         )
     )
